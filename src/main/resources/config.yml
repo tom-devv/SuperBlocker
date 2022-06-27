@@ -3,7 +3,7 @@ blockedCommands:
     - mvh
 
 
-discreteBlock: true #Reccomend (Overrides "blockMessage")
+discreteBlock: true #Recommend (Overrides "blockMessage")
 
 disableTabComplete: true #Stops bad tabbing
 
