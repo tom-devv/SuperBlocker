@@ -1,0 +1,10 @@
+blockedCommands:
+    - mv
+    - mvh
+
+
+discreteBlock: true #Reccomend (Overrides "blockMessage")
+
+disableTabComplete: true #Stops bad tabbing
+
+blockedMessage: "&cThat command is blocked"

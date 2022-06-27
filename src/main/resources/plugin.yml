@@ -1,0 +1,6 @@
+main: dev.tom.Heart
+name: SuperBlocker
+version: 1.0
+
+softdepend:
+  - ProtocolLib
