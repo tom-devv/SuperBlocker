@@ -43,7 +43,6 @@ public class commandEvent implements Listener {
             }
         }
 
-        System.out.println(Arrays.toString(message));
 
     }
 
