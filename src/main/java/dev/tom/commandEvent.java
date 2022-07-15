@@ -2,36 +2,41 @@ package dev.tom;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.event.player.PlayerChatTabCompleteEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.regex.PatternSyntaxException;
-
-
 
 
 public class commandEvent implements Listener {
 
-    public static Heart h = (Heart) Heart.getPlugin(Heart.class);
+    public static brain h = (brain) brain.getPlugin(brain.class);
 
 
-    List<String> list = h.getConfig().getStringList("blockedCommands");
+    private List<String> list = h.getConfig().getStringList("blockedCommands");
     @EventHandler
     public void onMessage(PlayerCommandPreprocessEvent event){
+
+        if(event.getPlayer().hasPermission("block.bypass")){
+            event.setCancelled(false);
+            return;
+        }
+
+
+        String[] message = event.getMessage().toLowerCase().split("\\s+");
+
 
         /*
         Block colon commands
          */
         if(event.getMessage().contains(":")){
+            if(message[0].equals("/schematic") || message[0].equals("//schematic")){
+                return;
+            }
+            event.getPlayer().sendMessage("Unknown command. Type \"/help\" for help.");
             event.setCancelled(true);
             return;
-        }
 
-        String[] message = event.getMessage().split("\\s+");
+        }
 
 
         if(list.contains(message[0].replace("/", ""))){

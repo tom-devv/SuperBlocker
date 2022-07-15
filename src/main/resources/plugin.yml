@@ -1,5 +1,5 @@
-main: dev.tom.Heart
-name: SuperBlocker
+main: dev.tom.brain
+name: TomCommandBlocker
 version: 1.0
 
 softdepend:
