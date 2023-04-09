@@ -1,5 +1,6 @@
-package dev.tom;
+package dev.tom.Listeners;
 
+import dev.tom.Blocker;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
@@ -7,12 +8,9 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import java.util.List;
 
 
-public class commandEvent implements Listener {
+public class Commands implements Listener {
 
-    public static brain h = (brain) brain.getPlugin(brain.class);
-
-
-    private List<String> list = h.getConfig().getStringList("blockedCommands");
+    private final List<String> list = Blocker.getInstance().getConfig().getStringList("blockedCommands");
     @EventHandler
     public void onMessage(PlayerCommandPreprocessEvent event){
 
@@ -24,28 +22,22 @@ public class commandEvent implements Listener {
 
         String[] message = event.getMessage().toLowerCase().split("\\s+");
 
-
         /*
         Block colon commands
          */
-        if(event.getMessage().contains(":")){
+        if(event.getMessage().contains(":") && Blocker.getInstance().getConfig().getBoolean("blockColonCommands")){
             if(message[0].equals("/schematic") || message[0].equals("//schematic")){
                 return;
             }
-            event.getPlayer().sendMessage("Unknown command. Type \"/help\" for help.");
+            event.getPlayer().sendMessage(Blocker.BlockMessage);
             event.setCancelled(true);
             return;
 
         }
 
-
         if(list.contains(message[0].replace("/", ""))){
             event.setCancelled(true);
-            if(h.getConfig().getBoolean("discreteBlock")){
-                event.getPlayer().sendMessage("Unknown command. Type \"/help\" for help.");
-            } else {
-                event.getPlayer().sendMessage(format.format(h.getConfig().getString("blockedMessage")));
-            }
+            event.getPlayer().sendMessage(Blocker.BlockMessage);
         }
 
 

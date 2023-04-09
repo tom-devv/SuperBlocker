@@ -1,9 +1,80 @@
+#Make sure all blockedCommands are lower case
 blockedCommands:
-    - mv
-    - mvh
+#Multichat commmands start
+    - "usecast"
+    - "announcement"
+    - "staff"
+    - "socialspy"
+    - "ac"
+    - "mce"
+    - "multichatexecute"
+    - "multichat"
+    - "multichatbypass"
+    - "mcc"
+    - "local"
+    - "helpme"
+    - "group"
+    - "global"
+    - "freezechat"
+    - "display"
+    - "clearchat"
+    - "channel"
+    - "cast"
+    - "bulletin"
+    - "acc"
+    - "g"
+    - "l"
+    - "nick"
+
+#Multichat commmands end
+    - "mv"
+    - "mvh"
+    - "whitelist"
+    - "ver"
+    - "jumpto"
+    - "?"
+    - "tab"
+    - "bukkit:plugins"
+    - "bukkit:?"
+    - "bukkit:help"
+    - "bukkit:ver"
+    - "bukkit:version"
+    - "bukkit:about"
+    - "bukkit:pl"
+    - "bukkit:msg"
+    - "bukkit:kill"
+    - "bukkit:tell"
+    - "bukkit:me"
+    - "minecraft:me"
+    - "pl"
+    - "plugins"
+    - "me"
+    - "about"
+    - "version"
+    - "ver"
+    - "icanhasbukkit"
+    - "calc"
+    - "calculate"
+    - "/calculate"
+    - "calc for(i=0;i<256;i++){for(j=0;j<256;j++){for(k=0;k<256;k++){for(l=0;l<256;l++){ln(pi)}}}}"
+    - "/calc for(i=0;i<256;i++){for(j=0;j<256;j++){for(k=0;k<256;k++){for(l=0;l<256;l++){ln(pi)}}}}"
+    - "to"
+    - "/to"
+    - "to for(i=0;i<256;i++){for(j=0;j<256;j++){for(k=0;k<256;k++){for(l=0;l<256;l++){ln(pi)}}}}"
+    - "/to for(i=0;i<256;i++){for(j=0;j<256;j++){for(k=0;k<256;k++){for(l=0;l<256;l++){ln(pi)}}}}"
+    - "gcore"
+    - "plugman"
+    - "eastwest"
+    - "lagg"
+    - "essentials"
+
+
+
 
 
 discreteBlock: true #Recommend (Overrides "blockMessage")
+
+blockColonCommands: false # This is normally enabled elsewhere
 
 disableTabComplete: true #Stops bad tabbing
 
