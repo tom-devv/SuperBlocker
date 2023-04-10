@@ -1,6 +1,6 @@
-main: dev.tom.brain
-name: TomCommandBlocker
+main: dev.tom.Blocker
+name: SuperBlocker
 version: 1.0
 
-softdepend:
+depend:
   - ProtocolLib
